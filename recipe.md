@@ -35,19 +35,21 @@ def mark_complete(self):
     # Parameters: none
     # Side effects:
         # Mark the task as complete (True)
+    pass # No code here yet
 
 def mark_incomplete(self):
     # Parameters: none
     # Side effects:
         # Mark the task as incomplete (False)
+    pass # No code here yet
 
 def __str__(self):
 #dunder method, formatts string so it is readable 
 # # status = "✓" if self.completed else ' '
 # return:
 #   A string showing both the tast and its complete 'status'
-     "✗"
     # [Expecting] f"Task '{self.title}' [{status}]"
+    pass # No code here yet
 
 
 
