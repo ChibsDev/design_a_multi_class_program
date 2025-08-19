@@ -92,7 +92,7 @@ _Make a list of examples of how the class will behave in different situations._
 
 """
 When given a task title
-the task title is save
+the task title is initialised
 completed status is false
 """
 task = Task("Get Sleep")
@@ -101,7 +101,7 @@ task = Task("Get Sleep")
 
 """
 Given an input that is not a string
-#rtask raises an exception
+#task raises an exception
 """
 task = Task(123) => Exception("Input needs to be a string!")
 
