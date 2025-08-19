@@ -54,31 +54,80 @@ def __str__(self):
 
 
 class ToDo:
-    # User-facing properties:
-    #   name: string
 
-    def __init__(self, name):
+    def __init__(self):
         # Parameters:
-        #   name: string
+        #   none
         # Side effects:
-        #   Sets the name property of the self object
+            #creates an empty task_list
+            #initialises id for task for task list 
         pass # No code here yet
 
-    def remind_me_to(self, task):
+    def add(self, title):
+    # Parameters:
+        #   title: String
+    #Returns:
+        # Confirmeation that string is added
+        # Side effects:
+        # adds task to task list with todo id
+        pass # No code here yet
+
+
+    def list_completed(self):
         # Parameters:
-        #   task: string representing a single task
+            #none
         # Returns:
-        #   Nothing
-        # Side-effects
-        #   Saves the task to the self object
+            #A list of compleded taskes
+        # Side effects:
+        pass # No code here yet
+   
+
+    def list_imcomplete(self):
+        # Parameters:
+            #none
+        # Returns:
+            #A list of incomplete tasks
+        # Side effects:
         pass # No code here yet
 
-    def remind(self):
+
+    def list_all(self):
+    # Parameters:
+            #none
         # Returns:
-        #   A string reminding the user to do the task
-        # Side-effects:
-        #   Throws an exception if no task is set
+            #A list of all tasks
+        # Side effects:
         pass # No code here yet
+
+
+    def find(self, task_id):
+        # Parameters:
+            #task_id: String
+        # Returns:
+            #task object related to task id 
+        # Side effects:
+        pass # No code here yet
+
+
+
+    def complete(self, task_id):
+    # Parameters:
+            #task_id
+        # Returns:
+            # confirmation that task is now marked as complete
+        # Side effects:
+            #Alters task complete status 
+        pass # No code here yet
+
+
+    def remove(self, task_id):
+        # Parameters:
+            #task_id: String
+        # Returns:
+            #confirmation of removal
+        # Side effects:
+        pass # removes task from tasklist
+
 ```
 
 ## 3. Create Examples as Tests
@@ -136,6 +185,12 @@ Buy energy drink => in string_formatted_task
 task.mark_complete():
 string_formatted_task = str(task)
 [✓] =>  in string_formatted_task
+
+
+# ---------------------------
+#           TODO
+# ---------------------------
+
 
 ```
 

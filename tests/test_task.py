@@ -34,6 +34,7 @@ def test_mark_incompleted_sets_task_status_to_False():
 def test_task_str_changes_with_status():
     task = Task("Buy eneergy drink")
     string_formatted_task = str(task)
+    print(string_formatted_task)
     assert "Buy eneergy drink" in string_formatted_task
     assert "✓" not in string_formatted_task
 
