@@ -4,7 +4,7 @@ import pytest
 def test_task_is_initialised_when_given():
     task = Task("Get Sleep")
     assert task.title == "Get Sleep"
-    # task.completed => False
+    assert task.completed == False
 
 def test_task_complete_status_is_false_by_default():
     task = Task("Get Sleep")

@@ -1,6 +1,4 @@
 class Task():
-
-    pass 
     def __init__(self, title):
         if type(title) != str:
             raise Exception("Input needs to be a string!")
