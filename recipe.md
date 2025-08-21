@@ -114,7 +114,7 @@ class ToDo:
     # Parameters:
             #task_id
         # Returns:
-            # confirmation that task is now marked as complete
+            # True
         # Side effects:
             #Alters task complete status 
         pass # No code here yet
@@ -191,6 +191,131 @@ string_formatted_task = str(task)
 #           TODO
 # ---------------------------
 
+"""
+When a new ToDo list is initialized
+the tasks list is empty
+the task ID counter is initialized to 1
+"""
+    todo = ToDo()
+    todo.tasks => []
+    todo._next_id => 1
+
+
+"""
+When a valid task is added
+it is appended to the tasks list
+it is assigned a unique ID thst is incremented 
+"""
+todo = ToDo()
+task1 = Task("Finish Unit 4")
+task2 = Task("Workout")
+todo.add(task1)
+todo.add(task2)
+todo.tasks => [task1, task2]
+task1.id => 1
+task2.id => 2
+
+"""
+When a non-Task object is added
+it raises a exception
+"""
+todo.add("non taks obj input") => Exception("add method requires a Task instance")
+
+"""
+When there are tasks in the list
+it returns a list of all tasks as strings
+"""
+todo = ToDo()
+task1 = Task("Task One")
+task2 = Task("Task Two")
+todo.add(task1)
+todo.add(task2)
+todo.list_all() => ["Task 'Task One' [ ]", "Task 'Task Two' [ ]"]
+
+"""
+When tasks have different completion statuses
+list_completed() returns only the completed tasks as strings
+list_incomplete() returns only the incomplete tasks as strings
+"""
+todo = ToDo()
+task1 = Task("Completed Task")
+task2 = Task("Incomplete Task")
+todo.add(task1)
+todo.add(task2)
+todo.complete(task1.id)
+todo.list_completed() => ["Task 'Completed Task' [✓]"]
+todo.list_incomplete() => ["Task 'Incomplete Task' [ ]"]
+
+"""
+When a valid ID is provided
+it returns the corresponding task object
+"""
+todo = ToDo()
+task = Task("Find task")
+todo.add(task)
+todo.find(task.id) => task
+
+"""
+When an invalid ID is provided
+it returns None
+"""
+todo = ToDo()
+todo.find(1) => None
+
+"""
+When a valid task ID is provided
+the corresponding task is marked as complete
+it returns True
+"""
+todo = ToDo()
+task = Task("To Complete")
+todo.add(task)
+todo.complete(task.id) => True
+task.completed => True
+
+"""
+When an invalid task ID is provided
+it returns False
+"""
+todo = ToDo()
+todo.complete(1) => False
+
+
+"""
+
+When a valid task ID is provided
+the corresponding task is removed from the list
+it returns True
+"""
+todo = ToDo()
+task = Task("To Remove")
+todo.add(task)
+todo.remove(task.id) => True
+todo.tasks => []
+
+"""
+When an invalid task ID is provided
+it returns False
+"""
+todo = ToDo()
+todo.remove(1) => False
+
+"""
+When some tasks are completed
+it removes all completed tasks from the list
+it returns the number of tasks removed
+"""
+todo = ToDo()
+task1 = Task("Completed One")
+task2 = Task("Incomplete")
+task3 = Task("Completed Two")
+todo.add(task1)
+todo.add(task2)
+todo.add(task3)
+todo.complete(task1.id)
+todo.complete(task3.id)
+todo.purge_completed() => 2
+todo.tasks => [task2]
 
 ```
 
